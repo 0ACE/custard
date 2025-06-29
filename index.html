@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Watermelon 🍉</title>
+  <link rel="icon" href="webpic (1).png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  
+  <div id="splash">
+    <div id="pressText">Press the custard 🍮</div>
+    <div id="custardEmoji">🍮</div>
+  </div>
+
+  
+  <div id="mainPage">
+    <div class="content">
+      <div class="emoji">from your cute Custard 🎀🍮</div>
+      <h1>Happy Birthday, My dear Watermelon 🍉!</h1>
+      <p>I wrote all of this for you...</p>
+      <p>please read it all carefully❤️</p>
+      <a href="https://drive.google.com/file/d/12GlEAO4iaCKBD_WZ-8PBHa3ltEDriXmp/view?usp=sharing" target="_blank">
+        🍮 Click me 🍉
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const custard = document.getElementById("custardEmoji");
+    const pressText = document.getElementById("pressText");
+    let clickCount = 0;
+
+    function moveCustard() {
+      const padding = 100;
+      const x = Math.random() * (window.innerWidth - padding);
+      const y = Math.random() * (window.innerHeight - padding);
+      custard.style.left = `${x}px`;
+      custard.style.top = `${y}px`;
+    }
+
+    custard.addEventListener("click", () => {
+      clickCount++;
+      moveCustard();
+
+      
+      custard.style.transition = "transform 0.3s ease, top 0.3s ease, left 0.3s ease";
+      custard.style.transform = `translate(-50%, -50%) scale(1.5)`; 
+
+      if (clickCount >= 7) {
+        setTimeout(() => {
+          document.getElementById("splash").style.display = "none";
+          document.getElementById("mainPage").style.display = "flex";
+        }, 600);
+      }
+    });
+  </script>
+<!-- I love U  -->
+</body>
+</html>
